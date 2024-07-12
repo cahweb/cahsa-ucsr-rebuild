@@ -217,8 +217,8 @@ function process(
             'name' => html_entity_decode($reqData['name']),
         ];
         
-        // We want to blind copy CAHSA, so they have a record of it
-        //$bcc = $from;
+        //We want to blind copy CAHSA, so they have a record of it
+        $bcc = $from;
 
         // We'll use the student email text
         ob_start();
@@ -247,24 +247,6 @@ function process(
             'addr' => $row['email'],
             'name' => "{$row['fname']} {$row['lname']}",
         ];
-
-        // Get current user's info, also
-        $sql = "SELECT fname, lname, email FROM cah.users WHERE id = {$_SESSION['userID']}";
-        $result = mysqli_query(getDB(), $sql);
-        if ($result instanceof \mysqli_result && $result->num_rows <= 0) {
-            $messages [] = [
-                'text'  => 'Could not find current user in database.',
-                'level' => 'danger',
-            ];
-            return false;
-        }
-        
-        $row = mysqli_fetch_assoc($result);
-        mysqli_free_result($result);
-
-        // Cache processor info
-        $processorName = "{$row['fname']} {$row['lname']}";
-        $processorEmail = $row['email'];
 
         // Use our advisor email, as opposed to the student email
         ob_start();
