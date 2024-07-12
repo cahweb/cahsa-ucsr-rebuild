@@ -1,0 +1,11 @@
+main {
+    min-height: 50vh;
+}
+
+.font-italic em {
+    font-style: normal;
+}
+
+.font-italic strong em {
+    font-style: bold;
+}
