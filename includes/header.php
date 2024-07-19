@@ -40,32 +40,11 @@ if (isset($_SESSION['loggedInAt']) && time() - $_SESSION['loggedInAt'] > ($hours
         <link rel="stylesheet" href="css/styles.css" type="text/css" />
     </head>
     <body>
-        <header class="container-fluid">
-            <?php
-            $fileName = "";
-            $headerImages = [];
-            foreach (new \DirectoryIterator('images/slideshow') as $fileInfo) {
-                if ($fileInfo->isDot() || $fileInfo->isDir() || $fileInfo->getExtension() != 'jpg') {
-                    continue;
-                }
-                $headerImages[] = $fileInfo->getFilename();
-            }
-            if (!empty($headerImages)) {
-                // Choose a random header image to display
-                $index = rand(0, count($headerImages) - 1);
-                $fileName = $headerImages[$index];
-            }
-            ?>
+        <script type="text/javascript" id="ucfhb-script" src="//universityheader.ucf.edu/bar/js/university-header.js?use-1200-breakpoint=1"></script>
+        <header class="container mt-5">
             <div class="row">
-                <div class="col-12 mx-auto d-flex justify-content-center w-100" id="header-banner">
-                    <div class="flex-1">
-                        <a href="https://cah.ucf.edu/cahsa">
-                            <img src="images/header.png" class="img-fluid" alt="College of Arts and Humanities Student Advising">
-                        </a>
-                    </div>
-                    <div class="flex-1">
-                        <img src="images/slideshow/<?= $fileName ?>" class="img-fluid" alt="CAH students performing scholastic activiies">
-                    </div>
+                <div class="col-12">
+                    <h1 class="text-center h3 font-weight-500 letter-spacing-1 mb-2 text-uppercase">College of Arts &amp; Humanities Student Advising</p>
                 </div>
             </div>
         </header>

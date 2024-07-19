@@ -135,7 +135,9 @@ if (isset($_POST['submit'])) {
     }
 }
 ?>
-
+<div class="container">
+    <h1 class="text-center font-condensed text-primary-aw text-uppercase">Undergraduate Course Subsititution Request</h1>
+</div>
 <main class="container mt-5 mb-4">
     <?php if (!empty($messages)) : foreach ($messages as $msg) : ?>
     <div class="alert alert-<?= $msg['level'] ?> alert-dismissable fade show mx-2" role="alert">

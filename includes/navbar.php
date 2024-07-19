@@ -23,7 +23,9 @@ $pages = [
 <div class="container-fluid bg-faded mb-3">
     <div class="container">
         <nav class="navbar navbar-toggleable-md navbar-light">
-            <a class="navbar-brand" href="/<?= getenv('SUBDIRECTORY'); ?>/">Undergraduate Course Substitution Request</a>
+            <a class="navbar-brand" href="/<?= getenv('SUBDIRECTORY'); ?>/">
+                <h1 class="h5 text-center text-transform-none text-primary-aw">Undergraduate Course Substitution Request</h1>
+            </a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
